@@ -1,0 +1,11 @@
+services:
+  productpage:
+    build: .
+    image: ghcr.io/fluk14150/bookinfo-productpage:dev
+    ports:
+      - "8083:9080"
+    environment:
+      ratings_service: http://ratings:8080
+      details_service: http://details:8081
+      reviews_service: http://reviews:9080
+      
